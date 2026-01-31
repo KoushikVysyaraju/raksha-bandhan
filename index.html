@@ -2,39 +2,61 @@
 <html>
 <head>
   <title>Happy Raksha Bandhan</title>
+
   <style>
     body {
       text-align: center;
       font-family: Arial, sans-serif;
       background: #fff3f7;
       padding-top: 40px;
+      overflow: hidden;
     }
+
     img {
       width: 200px;
     }
-    input {
-      padding: 8px;
-      margin: 5px;
-      font-size: 14px;
-      width: 200px;
-    }
+
     button {
-      padding: 10px 20px;
+      padding: 10px 26px;
       font-size: 16px;
       background: #e91e63;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
-      margin-top: 10px;
+      margin-top: 15px;
     }
+
     #message {
       margin-top: 20px;
       font-size: 18px;
       color: #444;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Floating emoji animation */
+    .float {
+      position: fixed;
+      bottom: -40px;
+      font-size: 32px;
+      animation: floatUp linear forwards;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <h1>Happy Raksha Bandhan 💖</h1>
@@ -43,29 +65,39 @@
 
   <br><br>
 
-  <input id="sister" placeholder="Chaturya Vysyaraju">
-  <br>
-  <input id="brother" placeholder="Koushik Vysyaraju">
-
-  <br>
-
   <button onclick="tieRakhi()">Tie Rakhi</button>
 
   <div id="message"></div>
 
   <script>
     function tieRakhi() {
-      var sisterName = document.getElementById("Chaturya").value;
-      var brotherName = document.getElementById("Koushik").value;
-
-      if (sisterName Chaturya Vysyaraju "" || brotherName Koushik Vysyaraju "") {
-        alert("Chaturya Vysyaraju, Koushik Vysyaraju");
-        return;
-      }
+      const sisterName = "Chaturya Vysyaraju";
+      const brotherName = "Koushik Vysyaraju";
 
       document.getElementById("message").innerText =
-        Chaturya Vysyaraju + " tied Rakhi to " + Koushik Vysyaraju +
-        " with love and protection 🤍";
+        sisterName + " tied Rakhi to " + brotherName +
+        " with love, care, and protection 🤍";
+
+      // Create floating emojis
+      for (let i = 0; i < 30; i++) {
+        createFloat();
+      }
+    }
+
+    function createFloat() {
+      const emojis = ["🎈", "💖", "❤️", "💝"];
+      const span = document.createElement("span");
+
+      span.className = "float";
+      span.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      span.style.left = Math.random() * 100 + "vw";
+      span.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+      document.body.appendChild(span);
+
+      setTimeout(() => {
+        span.remove();
+      }, 6000);
     }
   </script>
 
