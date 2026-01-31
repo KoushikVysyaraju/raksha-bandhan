@@ -7,9 +7,15 @@
       text-align: center;
       font-family: Arial, sans-serif;
       background: #fff3f7;
-      padding-top: 50px;
+      padding-top: 40px;
     }
     img {
+      width: 200px;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+      font-size: 14px;
       width: 200px;
     }
     button {
@@ -20,10 +26,11 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      margin-top: 10px;
     }
     #message {
       margin-top: 20px;
-      font-size: 20px;
+      font-size: 18px;
       color: #444;
     }
   </style>
@@ -36,14 +43,29 @@
 
   <br><br>
 
+  <input id="sister" placeholder="Sister's Name">
+  <br>
+  <input id="brother" placeholder="Brother's Name">
+
+  <br>
+
   <button onclick="tieRakhi()">Tie Rakhi</button>
 
   <div id="message"></div>
 
   <script>
     function tieRakhi() {
+      var sisterName = document.getElementById("sister").value;
+      var brotherName = document.getElementById("brother").value;
+
+      if (sisterName === "" || brotherName === "") {
+        alert("Please enter both names");
+        return;
+      }
+
       document.getElementById("message").innerText =
-        "Rakhi tied with love and protection 🤍";
+        sisterName + " tied Rakhi to " + brotherName +
+        " with love and protection 🤍";
     }
   </script>
 
