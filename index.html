@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Raksha Bandhan</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #fff3f7;
+      padding-top: 50px;
+    }
+    img {
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Happy Raksha Bandhan 💖</h1>
+
+  <img src="https://i.imgur.com/8Km9tLL.png" alt="Rakhi">
+
+  <br><br>
+
+  <button onclick="tieRakhi()">Tie Rakhi</button>
+
+  <div id="message"></div>
+
+  <script>
+    function tieRakhi() {
+      document.getElementById("message").innerText =
+        "Rakhi tied with love and protection 🤍";
+    }
+  </script>
+
+</body>
+</html>
